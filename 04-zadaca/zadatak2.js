@@ -71,7 +71,7 @@ app.get("/vrati-autore", (req, res) => {
 
 // Ruta za brisanje djela brise iz liste djela autora jedno djelo
 // Buduci da nije navedeno koje djelo treba obrisati, brise se zadnje djelo u arrayu
-app.delete("/izbrisi-djelo/:id", (req, res) => {
+app.patch("/izbrisi-djelo/:id", (req, res) => {
   let id = req.params.id
   let autor = autori.find((a) => a.id === parseInt(id))
   let indexAutora = autori.indexOf(autor)
